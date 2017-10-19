@@ -1,0 +1,337 @@
+/**
+ * reset style
+ */
+a {
+  text-decoration: none;
+  outline: none;
+}
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+fieldset, img {
+  border:0;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style:normal;
+  font-weight:normal;
+}
+ol, ul {
+  list-style:none;
+}
+caption, th {
+  text-align:left;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size:100%;
+  font-weight:normal;
+}
+q:before, q:after {
+  content:'';
+}
+abbr, acronym {
+  border:0;
+  font-variant:normal;
+}
+sup {
+  vertical-align:text-top;
+}
+sub {
+  vertical-align:text-bottom;
+}
+input, textarea, select {
+  font-family:inherit;
+  font-size:inherit;
+  font-weight:inherit;
+  resize: none;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+input::-ms-clear {
+  width:0;
+  height:0;
+  display: none;
+}
+img {
+  vertical-align: middle;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #ccc !important;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder { /* Firefox 18- */
+  color: #ccc !important;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {  /* Firefox 19+ */
+  color: #ccc !important;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #ccc !important;
+}
+.clearfix:after {
+  content:".";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*
+  reset style end
+*/
+html {
+  background: #fff;
+  color: #404040;
+  font-size: 14px;
+  line-height: 1.4;
+  font-family: 'Helvetica Neue', Helvetica, Arial, "Microsoft YaHei", "å¾®è½¯é›…é»‘", \5fae\8f6f\96c5\9ed1, "WenQuanYi Micro Hei", \5b8b\4f53, sans-serif;
+}
+.text-normal {
+  color: #404040;
+}
+a,
+text-primay {
+  color: #079cda;
+}
+strong,
+text-strong {
+  color: #000;
+}
+small,
+text-small {
+  color: #666;
+}
+section > header,
+section > article,
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+body > section {
+  padding: 30px 0;
+}
+body > section > header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+body > section:nth-child(odd) {
+  background: #fafafa;
+}
+
+
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 28px;
+}
+h3 {
+  font-size: 22px;
+}
+h4 {
+  font-size: 18px;
+}
+/***
+page header
+***/
+.iconfont{-webkit-font-smoothing: antialiased;}
+body > header {
+  height: 60px;
+  padding: 10px 10px;
+  border-bottom: 1px solid #d6d6d6;
+}
+body > header h1 {
+  float: left;
+  line-height: 40px;
+}
+body > header h1 small {
+  font-size: 16px;
+}
+body > header address {
+  float: right;
+  height: 20px;
+  margin-top: 20px;
+  line-height: 20px;
+}
+body > header address > div {
+  float: left;
+  margin: 0 5px;
+}
+body > header address > div .iconfont {
+  display: inline-block;
+  font-size: 20px;
+  vertical-align: top;
+}
+body > header address > div span {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/****
+skill list
+****/
+.skill-list {
+  margin: 0 30px;
+}
+.skill-list > li {
+  margin-bottom: 20px;
+}
+.skill-list .power-title {
+  padding-left: 10px;
+  border-left: 3px solid;
+  line-height: 40px;
+}
+.skill-list .power-100 .power-title {
+  width: 100%;
+  border-color: #3498db;
+  background: #d6efff;
+  color: #2a7da9;
+}
+.skill-list .power-90 .power-title {
+  width: 90%;
+  border-color: #3498db;
+  background: #d6efff;
+  color: #2a7da9;
+}
+.skill-list .power-60 .power-title {
+  width: 60%;
+  border-color: #80bd01;
+  background: #eaf6d0;
+  color: #6e9c0f;
+}
+.skill-detail > li{
+  margin-top: 5px;
+  margin-left: 25px;
+  list-style: disc;
+}
+
+/****
+learn-exp
+****/
+.learn-exp h3 {
+  text-align: center;
+}
+.learn-exp p {
+  margin: 0 30px;
+  padding-top: 20px;
+  font-size: 16px;
+  line-height: 24px;
+}
+/****
+time-line
+****/
+.time-line  {
+  position: relative;
+  padding-left: 60px;
+  padding-right: 30px;
+}
+.time-line::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 37px;
+  bottom: 0;
+  display: block;
+  width: 6px;
+  background: #ddd;
+}
+.time-line .time-point::before {
+  content: ' ';
+  position: absolute;
+  left: 28px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-radius: 100%;
+  background: #3498db;
+}
+body > section:nth-child(odd) .time-line .time-point::before {
+  border-color: #fafafa;
+}
+.time-line .time-point {
+  padding: 10px 0;
+}
+.time-line > section {
+  padding-left: 60px;
+  padding-bottom: 20px;
+}
+.time-line > section h5 {
+  font-size: 22px;
+}
+.time-line > section h5 small {
+  font-size: 16px;
+  color: #999;
+}
+.time-line > section h5 small::before {
+  content: ' ';
+  display: inline-block;
+  width: 40px;
+  margin: 18px 6px 0;
+  border-top: 2px solid #999;
+  vertical-align: top;
+}
+
+
+.project-list {
+  padding: 0 30px;
+}
+.project  {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px dashed #ddd;
+}
+.project header::after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+.skill-tags {
+  float: left;
+}
+.skill-tags li {
+  display: inline-block;
+  padding: 2px 4px;
+  margin-right: 4px;
+  border-radius: 4px;
+  color: #fff;
+}
+.skill-tags .skill-tag-nodejs {
+  background: #80bd01;
+}
+.skill-tags .skill-tag-javascript {
+  background: #f0db4f;
+}
+.skill-tags .skill-tag-html {
+  background: #ccc;
+}
+.project-time {
+  float: right;
+}
+.project-body {
+  padding-top: 20px;
+  font-size: 16px;
+  line-height: 24px;
+}
+.project-body p {
+  text-indent: 2em;
+  padding-bottom: 10px;
+}
