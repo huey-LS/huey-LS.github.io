@@ -68,6 +68,7 @@
 
 
 
+  <meta name="keywords" content="js," />
 
 
 
@@ -77,13 +78,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="lsxyz7的博客">
-<meta property="og:url" content="http://ignous.github.io/index.html">
+
+<meta name="description" content="前言之前在公司业务开发的时候经常会遇到这么几个问题：  如何统一处理各种500、400或者网络中断等问题 当前端页面越来复杂，基于安全性，当用户离开过久就会导致页面失效，就需要用户手动刷新页面。面对这种情况，是否可以通过设置ajax发送刷新请求，然后重发当前请求处理，避免用户手动刷新  在jQuery年代，我们可以通过ajaxSuccess等全局监听处理问题1(但是对重发，由于没有封装一层Requ">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="http-fetch-client介绍～">
+<meta property="og:url" content="http://ignous.github.io/http-fetch-client/index.html">
 <meta property="og:site_name" content="lsxyz7的博客">
+<meta property="og:description" content="前言之前在公司业务开发的时候经常会遇到这么几个问题：  如何统一处理各种500、400或者网络中断等问题 当前端页面越来复杂，基于安全性，当用户离开过久就会导致页面失效，就需要用户手动刷新页面。面对这种情况，是否可以通过设置ajax发送刷新请求，然后重发当前请求处理，避免用户手动刷新  在jQuery年代，我们可以通过ajaxSuccess等全局监听处理问题1(但是对重发，由于没有封装一层Requ">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-20T10:33:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lsxyz7的博客">
+<meta name="twitter:title" content="http-fetch-client介绍～">
+<meta name="twitter:description" content="前言之前在公司业务开发的时候经常会遇到这么几个问题：  如何统一处理各种500、400或者网络中断等问题 当前端页面越来复杂，基于安全性，当用户离开过久就会导致页面失效，就需要用户手动刷新页面。面对这种情况，是否可以通过设置ajax发送刷新请求，然后重发当前请求处理，避免用户手动刷新  在jQuery年代，我们可以通过ajaxSuccess等全局监听处理问题1(但是对重发，由于没有封装一层Requ">
 
 
 
@@ -113,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://ignous.github.io/"/>
+  <link rel="canonical" href="http://ignous.github.io/http-fetch-client/"/>
 
 
 
 
 
-  <title>lsxyz7的博客</title>
+  <title>http-fetch-client介绍～ | lsxyz7的博客</title>
   
 
 
@@ -138,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-  page-home">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -222,9 +228,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -254,9 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/http-fetch-client/" itemprop="url">http-fetch-client介绍～</a></h1>
+          <h1 class="post-title" itemprop="name headline">http-fetch-client介绍～</h1>
         
 
         <div class="post-meta">
@@ -306,9 +310,7 @@
       
 
       
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前在公司业务开发的时候经常会遇到这么几个问题：</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前在公司业务开发的时候经常会遇到这么几个问题：</p>
 <ol>
 <li>如何统一处理各种500、400或者网络中断等问题</li>
 <li>当前端页面越来复杂，基于安全性，当用户离开过久就会导致页面失效，就需要用户手动刷新页面。面对这种情况，是否可以通过设置ajax发送刷新请求，然后重发当前请求处理，避免用户手动刷新</li>
@@ -360,8 +362,6 @@
 <h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><p>项目地址：<a href="https://github.com/ignous/http-fetch-client" target="_blank" rel="external">https://github.com/ignous/http-fetch-client</a></p>
 <p>npm安装<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save http-fetch-client</div></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
     
@@ -376,285 +376,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ignous.github.io/whats-git-remote-origin-local/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ignous">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lsxyz7的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/whats-git-remote-origin-local/" itemprop="url">git 本地和 remotes 及其他小知识</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-09T22:47:41+08:00">
-                2016-08-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/js/" rel="tag"># js</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>初学git的时候总是会有这么2个问题：</p>
-<ol>
-<li>origin是什么？fetch 和 pull, push 和 commit 到底什么区别？</li>
-<li>push reject?</li>
-<li>合并分支怎么回事？冲突了怎么办？</li>
-</ol>
-<p>本文就是基于我的git使用经验来聊聊这2个问题</p>
-<h2 id="问题1：origin是什么？fetch-和-pull-push-和-commit-到底什么区别？"><a href="#问题1：origin是什么？fetch-和-pull-push-和-commit-到底什么区别？" class="headerlink" title="问题1：origin是什么？fetch 和 pull, push 和 commit 到底什么区别？"></a>问题1：origin是什么？fetch 和 pull, push 和 commit 到底什么区别？</h2><p>先附上图片一张<br><img src="/whats-git-remote-origin-local/git-remote-local.png" alt="img"><br>由图中可以看到本地其实有2个类似仓库的概念的东西<br>你每一次fetch，其实只是把远程服务器上的内容拉到你本地remotes下</p>
-<h3 id="再说origin"><a href="#再说origin" class="headerlink" title="再说origin:"></a>再说<code>origin</code>:</h3><p><code>origin</code>是本地对远程仓库的默认别名<br>我们执行<code>git remote -v</code>查看设置<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git remote -v</div><div class="line"><span class="comment"># 输出:</span></div><div class="line"><span class="comment"># origin  git@github.com:your_name/your_repertory.git (fetch)</span></div><div class="line"><span class="comment"># origin  git@github.com:your_name/your_repertory.git (push)</span></div></pre></td></tr></table></figure></p>
-<p>这个配置就能说明，我们执行<code>git fetch origin</code>的时候就会去<code>git@github.com:your_name/your_repertory.git</code>获取最新的远程代码。<br>同理push也就是把代码推到<code>git@github.com:your_name/your_repertory.git</code></p>
-<p>我们可以使用<code>git remote rename origin rpo</code>添加多个远程仓库<br>这个时候输出就会如下<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git remote -v</div><div class="line"><span class="comment"># 输出:</span></div><div class="line"><span class="comment"># rpo  git@github.com:your_name/your_repertory.git (fetch)</span></div><div class="line"><span class="comment"># rpo  git@github.com:your_name/your_repertory.git (push)</span></div></pre></td></tr></table></figure></p>
-<p>由此可以看到<code>origin</code>只是你clone时，git添加的默认远程分支，你可以改它名字为任何名字，并不会是很多刚接触时，认为必须origin不可的概念。</p>
-<h3 id="push-和-commit"><a href="#push-和-commit" class="headerlink" title="push 和 commit"></a>push 和 commit</h3><p>很多刚开始使用git的同学，都不太明白commit后为什么还要push<br>其实看上图可知commit只是修改了你本地的一个仓库内容，最后push才是完成推送到远程的一个动作（同时也会更新你本地的remotes）<br>所以，大家其实可以情景的在本地commit或其他操作，只要不使用push，完全不用担心远程仓库被搞坏。</p>
-<h3 id="fetch-和-pull"><a href="#fetch-和-pull" class="headerlink" title="fetch 和 pull"></a>fetch 和 pull</h3><p>记住一个概念 <code>pull = fetch + merge</code>，相信你就不会有问题</p>
-<h2 id="问题2：-push-rejected-push-失败"><a href="#问题2：-push-rejected-push-失败" class="headerlink" title="问题2： push rejected??push 失败"></a>问题2： push rejected??push 失败</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ git push origin master</div><div class="line">To git@github.com:your_name/your_repertory.git</div><div class="line"> ! [rejected]        master -&gt; master (non-fast-forward)</div><div class="line">error: failed to push some refs to <span class="string">'git@github.com:your_name/your_repertory.git'</span></div><div class="line">hint: Updates were rejected because the tip of your current branch is behind</div><div class="line">hint: its remote counterpart. Integrate the remote changes (e.g.</div><div class="line">hint: <span class="string">'git pull ...'</span>) before pushing again.</div><div class="line">hint: See the <span class="string">'Note about fast-forwards'</span> <span class="keyword">in</span> <span class="string">'git push --help'</span> <span class="keyword">for</span> details.</div></pre></td></tr></table></figure>
-<p>其实只是一个很常见的问题，当你们多人在同一个分支上合作开发的时候，你想要push到远程，然而在你之前另一位同学A,push了一个新的上去，此时你的remotes里的就不是最新的了，git不知道你的是对的，还是A同学的是对的，所以他就把后面的提交拒绝了，你也就收到了这个报错。<br>此时，我们只需要按提示的进行git pull（或者，推荐 git fetch 最新的在手动使用 rebase/merge 等操作），把A的更新到你的本地分支上，就可以成功的push了</p>
-<h2 id="问题3：冲突了怎么办？"><a href="#问题3：冲突了怎么办？" class="headerlink" title="问题3：冲突了怎么办？"></a>问题3：冲突了怎么办？</h2><p>其实这个教程非常的多，只是要切记<strong>冲突处理完前，请不要做切换分支等操作，正常的处理好冲突，如果无法处理时，使用abort取消才是正确的方式</strong></p>
-<h5 id="未完待续，如果有需要补充或者疑问可以通过-git-的-issues-或者直接联系我，我会再补充"><a href="#未完待续，如果有需要补充或者疑问可以通过-git-的-issues-或者直接联系我，我会再补充" class="headerlink" title="未完待续，如果有需要补充或者疑问可以通过 git 的 issues 或者直接联系我，我会再补充"></a>未完待续，如果有需要补充或者疑问可以通过 git 的 issues 或者直接联系我，我会再补充</h5>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ignous.github.io/create-nodejs-command-tool/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ignous">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lsxyz7的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/create-nodejs-command-tool/" itemprop="url">制作一个基于nodejs的命令行工具</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-01T22:52:06+08:00">
-                2016-08-01
-              </time>
+              <a href="/whats-git-remote-origin-local/" rel="next" title="git 本地和 remotes 及其他小知识">
+                <i class="fa fa-chevron-left"></i> git 本地和 remotes 及其他小知识
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>这是我个人的nodejs命令行工具开发和学习过程，总结起来留作记录和查询</p>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>我们编辑<code>bin/sum-cli.js</code>写一点小脚本，计算2个值之和，代码如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/usr/bin/env node</span></div><div class="line"><span class="keyword">const</span> argv = process.argv.slice(<span class="number">2</span>);</div><div class="line">sum(argv[<span class="number">1</span>], argv[<span class="number">2</span>]);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(a + b);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>#!/usr/bin/env node</code> 的介绍请看最后小知识</p>
-<h2 id="npm-bin"><a href="#npm-bin" class="headerlink" title="npm bin"></a>npm bin</h2><p>本文的关键，设置bin，让npm链接你的脚本到全局，我们在package.json中添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">bin: &#123;</div><div class="line">    sum: &apos;bin/sum-cli&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="npm-link"><a href="#npm-link" class="headerlink" title="npm link"></a>npm link</h2><p>执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm link</div></pre></td></tr></table></figure></p>
-<p><code>npm link</code>可以直接链接到你的全局node_modules中，这样我们就不用通过<code>npm install</code>了</p>
-<h2 id="开始使用我们的命令吧"><a href="#开始使用我们的命令吧" class="headerlink" title="开始使用我们的命令吧"></a>开始使用我们的命令吧</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sum 1 2</div><div class="line">#result 3</div></pre></td></tr></table></figure>
-<p>到此，我们已经成功完成一个脚本了</p>
-<h2 id="其它一些可能遇到的小知识点（也许这是本文中最有用的几点）"><a href="#其它一些可能遇到的小知识点（也许这是本文中最有用的几点）" class="headerlink" title="其它一些可能遇到的小知识点（也许这是本文中最有用的几点）"></a>其它一些可能遇到的小知识点（也许这是本文中最有用的几点）</h2><ul>
-<li><p>如何在 bin 中开启 harmony 模式<br>文件第一行处加入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env node --harmony</div></pre></td></tr></table></figure>
-<p>这是 linux 脚本中指定脚本的解释程序，我们这里表示用node –harmony解释我们的脚本，自然就能开启 harmony 模式了</p>
-</li>
-<li>命令行框架<br><a href="https://github.com/yargs/yargs" target="_blank" rel="external">yargs</a><br><a href="https://github.com/tj/commander.js" target="_blank" rel="external">Commander</a><br>这2个功能强大，而且齐全，可作为开发主力使用</li>
-</ul>
-<p><a href="https://github.com/substack/minimist" target="_blank" rel="external">minimist</a> 作者本次使用的命令行参数解析工具<br>拥有以下优点：<br>0依赖，超轻量，是你制作一个项目时，命令只作为辅助时的良好选择</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -664,130 +415,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ignous.github.io/first_day/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ignous">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lsxyz7的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/first_day/" itemprop="url">first day</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-21T01:05:05+08:00">
-                2016-07-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>第一篇博客，让我们继续努力吧</p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -795,6 +427,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -815,8 +451,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -877,6 +522,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特点"><span class="nav-number">2.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用场景"><span class="nav-number">3.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何创建retry的特殊用法"><span class="nav-number">4.</span> <span class="nav-text">如何创建retry的特殊用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Response"><span class="nav-number">5.</span> <span class="nav-text">Response</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Method"><span class="nav-number">5.1.</span> <span class="nav-text">Method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Attribute"><span class="nav-number">5.2.</span> <span class="nav-text">Attribute</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Request"><span class="nav-number">6.</span> <span class="nav-text">Request</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Method-1"><span class="nav-number">6.1.</span> <span class="nav-text">Method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Options-Attribute"><span class="nav-number">6.2.</span> <span class="nav-text">Options Attribute</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多用法"><span class="nav-number">7.</span> <span class="nav-text">更多用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备注"><span class="nav-number">8.</span> <span class="nav-text">备注</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1017,6 +678,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 

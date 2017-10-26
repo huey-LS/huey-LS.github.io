@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>http-fetch-client-test</title>
+  </head>
+  <body>
+    <p>请打开控制台</p>
+    <script src="/js/http-fetch-client.js"></script>
+    <script>
+      var fetch = new FetchClient.default();
+      fetch.get('./json/test.json')
+        .use(function (response) {
+          console.log(response.json());
+        });
+    </script>
+  </body>
+</html>
