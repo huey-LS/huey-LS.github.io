@@ -188,13 +188,11 @@ body > header address > div span {
 /****
 package-list
 ****/
-.package-list .title,
-.package-list .content {
-  display: inline-block;
+.package-list li + li {
+  margin-top: 20px;
 }
-
 .package-list .content {
-  margin-left: 10px;
+  margin-top: 10px;
 }
 
 /****
