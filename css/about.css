@@ -186,6 +186,18 @@ body > header address > div span {
 }
 
 /****
+package-list
+****/
+.package-list .title,
+.package-list .content {
+  display: inline-block;
+}
+
+.package-list .content {
+  margin-left: 10px;
+}
+
+/****
 skill list
 ****/
 .skill-list {
