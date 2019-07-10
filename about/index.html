@@ -160,49 +160,54 @@
         <header>
           <h4>网易100分</h4>
           <ul class="skill-tags">
-            <li class="skill-tag-nodejs">Node.js</li>
             <li class="skill-tag-javascript">javascript</li>
             <li class="skill-tag-html">html/css</li>
           </ul>
           <small class="project-time">2019年3月</small>
         </header>
         <div class="project-body">
-          <p>负责老师课程管理模块及课程流程的开发工作。</p>
-          <p>完成了基于canvas的老师作业批改模块，包含了使用学生智能笔的点数据生成可播放的轨迹图像，支持老师在网页绘制批改内容的画板功能</p>
-          <p>完成了教师直播课程直播界面开发。</p>
+          <p>网易100分是面向k12的教育平台，拥有一套完整的课程管理和发布系统，同时支持老师制作和发布试卷，学生提交作业及老师在线批改的功能，也支持老师发布点播及直播课程。</p>
+          <p>老师在线批改是基于canvas开发，包含了使用学生智能笔的点数据生成可播放的轨迹图像，支持老师在网页绘制批改内容的画板功能</p>
+          <p>在最新一版中，添加了智能笔功能，学生可以在特定的智能试卷上用智能笔书写，即可采集到对应的书写点数据。使用点数据在web上重新绘制成书写动画，支持老师查看和播放。</p>
         </div>
       </section>
       <section class="project">
         <header>
-          <h4>网易云<small>(<a href="https://www.163yun.com" target="_blank" rel="external">https://www.163yun.com</a>)</small></h4>
+          <h4>网易云<small>(<a href="https://www.163yun.com" target="_blank" rel="external">https://www.163yun.com</a>)</small>云公共</h4>
           <ul class="skill-tags">
-            <li class="skill-tag-nodejs">Node.js</li>
             <li class="skill-tag-javascript">javascript</li>
             <li class="skill-tag-html">html/css</li>
           </ul>
-          <small class="project-time">2017年1月</small>
+          <small class="project-time">2017年1月-2019年2月</small>
         </header>
         <div class="project-body">
-          <p>负责网易云官网、帐号及后台的开发。并负责协调安排实习生及其他前端同学工作任务</p>
-          <p>开发了一套基于PostMessage的跨域通信库，为sdk提供跨域能力，<a href="https://www.npmjs.org/package/post-message-tunnel" target="_blank" rel="external">PostMessageTunnel</a></p>
-          <p>封装了<a href="https://github.com/ignous/storage" target="_blank" rel="external">storage(基于localStorage的本地数据管理)</a>管理登陆信息及国际化信息，及处理同一浏览器不同标签页间的通信</p>
+          <p>云公共是网易云的公共支撑部门，提供统一的帐号、官网、运营后台及统一的控制台导航及组件等。</p>
+          <h5>云帐号</h5>
+          <p>云帐号提供了共用的登陆注册等帐号相关功能，同时提供了云帐号SDK，用于提供登陆用户信息、多语言信息等公共信息</p>
+          <p>云帐号的登陆状态使用了<b>refresh token</b> + <b>access token</b>方式管理登陆状态，由前端发起获取access token和refresh token的操作。这里refresh的设计上使用了队列+自动重试的机制，实现了如多个请求同时失败，只会refresh一次的功能（多次重试会导致比较早的refresh获得的token失效），并会自动重试所有失败的请求。</p>
+          <p>云帐号SDK基于PostMessage进行跨域通信，同时封装了<a href="https://www.npmjs.org/package/post-message-tunnel" target="_blank" rel="external">PostMessageTunnel</a>作为PostMessage的跨域方案，同时用于帐号及控制台的SDK；</p>
+          <p>云帐号基于<a href="https://github.com/ignous/storage" target="_blank" rel="external">storage(基于localStorage的本地数据管理)</a>的方式管理登陆信息及国际化信息，同时通过监听localStorage的变更实现一个标签页状态改变，同时响应到所有已打开的标签页上；而这个通行机制更有效的用于基于websocket实时消息通知，多个标签页只需要一个socket链接即可完成，大大减少了对后端的压力。</p>
+          <h5>运营后台</h5>
+          <p>运营后台主要基于react开发，是react+redux项目的良好实践。</p>
+          <p>运营后台集合了大量多种的功能，包含了文档管理、权限管理、群组管理、消息中心等一系列功能</p>
         </div>
       </section>
       <section class="project">
         <header>
           <h4>亿方云企业文件协作平台<small>(<a href="https://www.fangcloud.com" target="_blank" rel="external">https://www.fangcloud.com</a>)</small></h4>
           <ul class="skill-tags">
-            <li class="skill-tag-nodejs">Node.js</li>
             <li class="skill-tag-javascript">javascript</li>
             <li class="skill-tag-html">html/css</li>
           </ul>
           <small class="project-time">2014年11月-2015年12月</small>
         </header>
         <div class="project-body">
-          <p>该平台基于backbone搭建的单页面应用作为主内容，包含部门、群组、文件操作、协作分享等功能，以及完整的企业后台管理系统。并完成了对应移动端应用的开发。</p>
-          <p>开发了一套基于flexbox布局的移动端布局css库，解决移动端页面需求，可以快速的搭建移动端应用及适配；</p>
+          <p>该平台基于backbone搭建的单页面应用作为主内容，包含部门、群组、文件操作、协作分享等功能，以及完整的企业后台管理系统。并完成了对应移动端应用的开发；</p>
+          <p>移动端页面基于rem + flexbox 绘制适应多个尺寸的屏幕适配；</p>
           <p>深入了解了前端的mvc设计；</p>
-          <p>开发了jFactory（<a href="https://github.com/ignous/jFactory" target="_blank" rel="external">https://github.com/ignous/jFactory</a>），以工厂模式，快速创建一些任务的组合，实现了一个复杂流程中，每个job函数的重用，流程的控制等。</p>
+          <p>
+            开发了jFactory（<a href="https://github.com/ignous/jFactory" target="_blank" rel="external">https://github.com/ignous/jFactory</a>），可以快速创建一些任务的组合，实现了一个复杂流程中，每个job函数和任务流程的解耦，流程的控制等。jFactory已使用于用户的二次验证及群组的权限和文件夹管理等操作
+          </p>
         </div>
       </section>
       <section class="project">
@@ -223,7 +228,7 @@
           <h4>员工通讯录及工作平台</h4>
           <ul class="skill-tags">
             <li class="skill-tag-nodejs">Node.js</li>
-            <li class="skill-tag-javascript">javasript</li>
+            <li class="skill-tag-javascript">javascript</li>
             <li class="skill-tag-html">html/css</li>
           </ul>
           <small class="project-time">2014年3月-2014年7月</small>
