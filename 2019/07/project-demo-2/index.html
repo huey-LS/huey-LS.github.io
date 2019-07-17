@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="lerna,前端工程化," />
+  <meta name="keywords" content="lerna,submodule,前端工程化," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="第一篇： 使用 git submodule(书写中)本文额外知识点git submodulegit submodule官方大文档 前言：为什么还要git submodule">
-<meta name="keywords" content="lerna,前端工程化">
+<meta name="description" content="目录 第一篇：基于 lerna 的多项目工程 第二篇：使用 git submodule 拆封仓库  第二篇：使用 git submodule 拆封仓库(书写中)本文额外知识点git submodulegit submodule官方大文档 前言：为什么还要git submodule">
+<meta name="keywords" content="lerna,submodule,前端工程化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于 git submodule + lerna 的多项目工程">
 <meta property="og:url" content="http://ignous.github.io/2019/07/project-demo-2/index.html">
 <meta property="og:site_name" content="lsxyz7的博客">
-<meta property="og:description" content="第一篇： 使用 git submodule(书写中)本文额外知识点git submodulegit submodule官方大文档 前言：为什么还要git submodule">
+<meta property="og:description" content="目录 第一篇：基于 lerna 的多项目工程 第二篇：使用 git submodule 拆封仓库  第二篇：使用 git submodule 拆封仓库(书写中)本文额外知识点git submodulegit submodule官方大文档 前言：为什么还要git submodule">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-17T03:34:24.067Z">
+<meta property="og:updated_time" content="2019-07-17T03:37:27.055Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于 git submodule + lerna 的多项目工程">
-<meta name="twitter:description" content="第一篇： 使用 git submodule(书写中)本文额外知识点git submodulegit submodule官方大文档 前言：为什么还要git submodule">
+<meta name="twitter:description" content="目录 第一篇：基于 lerna 的多项目工程 第二篇：使用 git submodule 拆封仓库  第二篇：使用 git submodule 拆封仓库(书写中)本文额外知识点git submodulegit submodule官方大文档 前言：为什么还要git submodule">
 
 
 
@@ -330,7 +330,11 @@
       
 
       
-        <h1 id="第一篇：-使用-git-submodule-书写中"><a href="#第一篇：-使用-git-submodule-书写中" class="headerlink" title="第一篇： 使用 git submodule(书写中)"></a>第一篇： 使用 <code>git submodule</code>(书写中)</h1><h3 id="本文额外知识点"><a href="#本文额外知识点" class="headerlink" title="本文额外知识点"></a>本文额外知识点</h3><h4 id="git-submodule"><a href="#git-submodule" class="headerlink" title="git submodule"></a><code>git submodule</code></h4><p><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97" target="_blank" rel="external">git submodule</a><br>官方大文档</p>
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+<li><a href="http://www.lsxyz7.com/2019/06/project-demo/" target="_blank" rel="external">第一篇：基于 <code>lerna</code> 的多项目工程</a></li>
+<li><a href="http://www.lsxyz7.com/2019/07/project-demo-2/" target="_blank" rel="external">第二篇：使用 <code>git submodule</code> 拆封仓库</a></li>
+</ul>
+<h1 id="第二篇：使用-git-submodule-拆封仓库-书写中"><a href="#第二篇：使用-git-submodule-拆封仓库-书写中" class="headerlink" title="第二篇：使用 git submodule 拆封仓库(书写中)"></a>第二篇：使用 <code>git submodule</code> 拆封仓库(书写中)</h1><h3 id="本文额外知识点"><a href="#本文额外知识点" class="headerlink" title="本文额外知识点"></a>本文额外知识点</h3><h4 id="git-submodule"><a href="#git-submodule" class="headerlink" title="git submodule"></a><code>git submodule</code></h4><p><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97" target="_blank" rel="external">git submodule</a><br>官方大文档</p>
 <h2 id="前言：为什么还要git-submodule"><a href="#前言：为什么还要git-submodule" class="headerlink" title="前言：为什么还要git submodule"></a>前言：为什么还要<code>git submodule</code></h2>
       
     </div>
@@ -350,6 +354,8 @@
           
             <a href="/tags/lerna/" rel="tag"># lerna</a>
           
+            <a href="/tags/submodule/" rel="tag"># submodule</a>
+          
             <a href="/tags/前端工程化/" rel="tag"># 前端工程化</a>
           
         </div>
@@ -363,8 +369,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/project-demo/" rel="next" title="基于 git submodule + lerna 的多项目单工程">
-                <i class="fa fa-chevron-left"></i> 基于 git submodule + lerna 的多项目单工程
+              <a href="/2019/06/project-demo/" rel="next" title="基于 git submodule + lerna 的多项目工程">
+                <i class="fa fa-chevron-left"></i> 基于 git submodule + lerna 的多项目工程
               </a>
             
           </div>
@@ -468,7 +474,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -511,7 +517,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一篇：-使用-git-submodule-书写中"><span class="nav-number">1.</span> <span class="nav-text">第一篇： 使用 git submodule(书写中)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本文额外知识点"><span class="nav-number">1.0.1.</span> <span class="nav-text">本文额外知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-submodule"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">git submodule</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前言：为什么还要git-submodule"><span class="nav-number">1.1.</span> <span class="nav-text">前言：为什么还要git submodule</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二篇：使用-git-submodule-拆封仓库-书写中"><span class="nav-number">2.</span> <span class="nav-text">第二篇：使用 git submodule 拆封仓库(书写中)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本文额外知识点"><span class="nav-number">2.0.1.</span> <span class="nav-text">本文额外知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-submodule"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">git submodule</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前言：为什么还要git-submodule"><span class="nav-number">2.1.</span> <span class="nav-text">前言：为什么还要git submodule</span></a></li></ol></li></ol></div>
             
 
           </div>
