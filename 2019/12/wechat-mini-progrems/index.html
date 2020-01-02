@@ -68,7 +68,6 @@
 
 
 
-  <meta name="keywords" content="lerna,submodule,前端工程化," />
 
 
 
@@ -78,19 +77,17 @@
 
 
 
-
-<meta name="description" content="目录 第一篇：基于 lerna 的多项目工程 第二篇：使用 git submodule 拆封仓库  第二篇：使用 git submodule 拆分仓库(书写中)本文概要额外知识点git submodulegit submodule官方大文档 demohttps://github.com/ignous/project-demo 前言：为什么还要git submodule上一章节中已经讲了使用lern">
-<meta name="keywords" content="lerna,submodule,前端工程化">
+<meta name="description" content="迟到的微信小程序开发小结回顾一下…从7月到9月，一直忙于微信小程序开发，发现一直没有总结过，就来总结下微信小程序的开发经验。 虽然项目本身壮志未酬身先死… 但是总结经验还是来一波的。 技术框架 taro + typescript lerna 自研小框架 http-fetch-client + cherry-tomato  taro + typescript为什么使用 taro使用 taro 是调研">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于 git submodule + lerna 的多项目工程">
-<meta property="og:url" content="http://ignous.github.io/2019/07/project-demo-2/index.html">
+<meta property="og:title" content="lsxyz7的博客">
+<meta property="og:url" content="http://ignous.github.io/2019/12/wechat-mini-progrems/index.html">
 <meta property="og:site_name" content="lsxyz7的博客">
-<meta property="og:description" content="目录 第一篇：基于 lerna 的多项目工程 第二篇：使用 git submodule 拆封仓库  第二篇：使用 git submodule 拆分仓库(书写中)本文概要额外知识点git submodulegit submodule官方大文档 demohttps://github.com/ignous/project-demo 前言：为什么还要git submodule上一章节中已经讲了使用lern">
+<meta property="og:description" content="迟到的微信小程序开发小结回顾一下…从7月到9月，一直忙于微信小程序开发，发现一直没有总结过，就来总结下微信小程序的开发经验。 虽然项目本身壮志未酬身先死… 但是总结经验还是来一波的。 技术框架 taro + typescript lerna 自研小框架 http-fetch-client + cherry-tomato  taro + typescript为什么使用 taro使用 taro 是调研">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-17T06:29:19.789Z">
+<meta property="og:updated_time" content="2019-12-26T05:52:48.846Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于 git submodule + lerna 的多项目工程">
-<meta name="twitter:description" content="目录 第一篇：基于 lerna 的多项目工程 第二篇：使用 git submodule 拆封仓库  第二篇：使用 git submodule 拆分仓库(书写中)本文概要额外知识点git submodulegit submodule官方大文档 demohttps://github.com/ignous/project-demo 前言：为什么还要git submodule上一章节中已经讲了使用lern">
+<meta name="twitter:title" content="lsxyz7的博客">
+<meta name="twitter:description" content="迟到的微信小程序开发小结回顾一下…从7月到9月，一直忙于微信小程序开发，发现一直没有总结过，就来总结下微信小程序的开发经验。 虽然项目本身壮志未酬身先死… 但是总结经验还是来一波的。 技术框架 taro + typescript lerna 自研小框架 http-fetch-client + cherry-tomato  taro + typescript为什么使用 taro使用 taro 是调研">
 
 
 
@@ -120,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="http://ignous.github.io/2019/07/project-demo-2/"/>
+  <link rel="canonical" href="http://ignous.github.io/2019/12/wechat-mini-progrems/"/>
 
 
 
 
 
-  <title>基于 git submodule + lerna 的多项目工程 | lsxyz7的博客</title>
+  <title> | lsxyz7的博客</title>
   
 
 
@@ -253,7 +250,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ignous.github.io/2019/07/project-demo-2/">
+    <link itemprop="mainEntityOfPage" href="http://ignous.github.io/2019/12/wechat-mini-progrems/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ignous">
@@ -270,7 +267,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">基于 git submodule + lerna 的多项目工程</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -282,8 +279,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-01T00:00:00+08:00">
-                2019-07-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-26T10:19:14+08:00">
+                2019-12-26
               </time>
             
 
@@ -301,8 +298,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/project-demo-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/07/project-demo-2/" itemprop="commentsCount"></span>
+                <a href="/2019/12/wechat-mini-progrems/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/12/wechat-mini-progrems/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -330,16 +327,28 @@
       
 
       
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
-<li><a href="http://www.lsxyz7.com/2019/06/project-demo/" target="_blank" rel="external">第一篇：基于 <code>lerna</code> 的多项目工程</a></li>
-<li><a href="http://www.lsxyz7.com/2019/07/project-demo-2/" target="_blank" rel="external">第二篇：使用 <code>git submodule</code> 拆封仓库</a></li>
-</ul>
-<h1 id="第二篇：使用-git-submodule-拆分仓库-书写中"><a href="#第二篇：使用-git-submodule-拆分仓库-书写中" class="headerlink" title="第二篇：使用 git submodule 拆分仓库(书写中)"></a>第二篇：使用 <code>git submodule</code> 拆分仓库(书写中)</h1><h2 id="本文概要"><a href="#本文概要" class="headerlink" title="本文概要"></a>本文概要</h2><h3 id="额外知识点"><a href="#额外知识点" class="headerlink" title="额外知识点"></a>额外知识点</h3><h4 id="git-submodule"><a href="#git-submodule" class="headerlink" title="git submodule"></a><code>git submodule</code></h4><p><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97" target="_blank" rel="external">git submodule</a><br>官方大文档</p>
-<h4 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h4><p><a href="https://github.com/ignous/project-demo" target="_blank" rel="external">https://github.com/ignous/project-demo</a></p>
-<h2 id="前言：为什么还要git-submodule"><a href="#前言：为什么还要git-submodule" class="headerlink" title="前言：为什么还要git submodule"></a>前言：为什么还要<code>git submodule</code></h2><p>上一章节中已经讲了使用<code>lerna</code>管理依赖，但是为什么还要<code>git submodule</code>呢。</p>
-<p>我们可以这么设想，随着项目的不断扩张，功能越来越多，需要的客户端也越来越多，需要支持web,h5,小程序等各个平台。也出现了各个不同业务，除了主业务外可能还会有数据统计、运营活动管理、订单支付等多个。单个仓库就越来越臃肿了，<code>迫切的需要拆分子项目来分开管理</code>。</p>
-<h2 id="使用-git-submodule-lerna的建议目录结构"><a href="#使用-git-submodule-lerna的建议目录结构" class="headerlink" title="使用 git submodule + lerna的建议目录结构"></a>使用 <code>git submodule</code> + <code>lerna</code>的建议目录结构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">root/</div><div class="line">├── packages/ // 这里是使用到的 github/gitlab 上的公共模块</div><div class="line">│   ├── account/ // 帐号模块</div><div class="line">│   │   └── ... // 仓库代码</div><div class="line">│   └── 其他模块/ // 其他模块</div><div class="line">│       └── package.json</div><div class="line">├── client/ // 这里放当前客户端，因为拆分了，一般一个仓库对应一个项目</div><div class="line">│   ├── src/</div><div class="line">│   │   └── ... // 这里就和平时的一样了</div><div class="line">│   ├── babel.config.js // babel</div><div class="line">│   ├── package.json</div><div class="line">│   └── webpack.config.js // webpack 配置</div><div class="line">├── .gitmodules // git submodule配置（本文重点）</div><div class="line">├── .eslintrc.js // 所有项目统一的eslint配置，不用担心每个项目规则不一样了～</div><div class="line">├── lerna.json // lerna 配置</div><div class="line">└── package.json //</div></pre></td></tr></table></figure>
-<p>以后将会有多个仓库，每个仓库中的<code>client</code>对应当前项目的业务代码，<code>packages</code>是使用到的功能模块（依旧不需要<code>npm</code>）</p>
+        <h1 id="迟到的微信小程序开发小结"><a href="#迟到的微信小程序开发小结" class="headerlink" title="迟到的微信小程序开发小结"></a>迟到的微信小程序开发小结</h1><h2 id="回顾一下…"><a href="#回顾一下…" class="headerlink" title="回顾一下…"></a>回顾一下…</h2><p>从7月到9月，一直忙于微信小程序开发，发现一直没有总结过，就来总结下微信小程序的开发经验。</p>
+<p>虽然项目本身壮志未酬身先死… 但是总结经验还是来一波的。</p>
+<h2 id="技术框架"><a href="#技术框架" class="headerlink" title="技术框架"></a>技术框架</h2><ol>
+<li>taro + typescript</li>
+<li>lerna</li>
+<li>自研小框架 <a href="https://github.com/huey-LS/http-fetch-client" target="_blank" rel="external">http-fetch-client</a> + <a href="https://github.com/huey-LS/cherry-tomato" target="_blank" rel="external">cherry-tomato</a></li>
+</ol>
+<h3 id="taro-typescript"><a href="#taro-typescript" class="headerlink" title="taro + typescript"></a>taro + typescript</h3><h4 id="为什么使用-taro"><a href="#为什么使用-taro" class="headerlink" title="为什么使用 taro"></a>为什么使用 taro</h4><p>使用 taro 是调研了下当前主流的小程序框架</p>
+<ol>
+<li>wepy、mpvue等，感觉维护有点少</li>
+<li>taro 活跃度很高，更新也很快，维护的感觉很好</li>
+<li>本人倾向于 <code>react</code> 语法.. 怎么感觉这才是关键</li>
+<li>值得关注的新框架 <code>kbone</code> &amp; <code>remaxjs</code><br>a. 这2个框架不同于其他，主要是运行时根据虚拟DOM生成需要的小程序节点，所以拥有比如其他依赖编译的框架更高的自由度，更接近 react/vue 原本的使用体验（当然原本的小程序能力限制还是有的，只是模版限制可能更少）<br>b. <code>根据虚拟DOM生成需要的小程序节点</code> 这一点带来灵活的好处同时也带来了更大的难度和风险，大家选择时要慎重。<br>c. <code>kbone</code> 是微信官方推荐的<br>d. <code>remaxjs</code> 是阿里某大佬开源的</li>
+</ol>
+<h4 id="为什么使用-typescript"><a href="#为什么使用-typescript" class="headerlink" title="为什么使用 typescript"></a>为什么使用 typescript</h4><p>既然已经使用了<code>react</code>, 再配上 <code>typescript</code> 不完全没问题么😊</p>
+<p><code>typescript</code> 在vscode里简直神器，各种提示各个规范，写起来都不用看原来都代码想是参数什么的</p>
+<h3 id="lerna"><a href="#lerna" class="headerlink" title="lerna"></a>lerna</h3><p>本来是想基于 <code>lerna</code> 做 <code>monorepo</code> ，方便以后扩展出 <code>web/h5</code> 等运行环境等，抽取公共代码。但是项目中落了… 还未考验运行效果。</p>
+<h4 id="中间遗留的问题及不完美的地方"><a href="#中间遗留的问题及不完美的地方" class="headerlink" title="中间遗留的问题及不完美的地方"></a>中间遗留的问题及不完美的地方</h4><ol>
+<li><code>lerna</code> 管理后的多个包… 每个都需要使用 <code>babel or tsc</code> 做转换，编译过程不是很实时，启动方式也比较麻烦，运行流程：<br>a. <code>lerna run dev --scope=主工程</code> 启动主工程<br>b. <code>lerna run build:watch --scope=依赖包工程</code> watch依赖包工程<br>c. 而且 小程序的npm包是需要从 <code>node_module</code> 复制到根目录(比如<code>root/npm/xxx</code>)才能被使用的，导致依赖包工程编译后还需要再复制一次，过程特别复杂，taro及微信小城本身的npm支持，都<code>不支持watch并复制</code>，所以得自己写 小程序npm 方案，结果一直没有特别好的运行下去。<br>d. 猜想可以用解决方式：手动创建软连接，来使他像是一个工程的文件，暂时还没尝试，可以期待一下。<br>f. 特别备注：<code>web/h5</code> 用<code>webpack</code>就很棒，直接可以打包 依赖包工程，<code>完全没有以上问题</code>。</li>
+</ol>
+<h3 id="推广一下自研小框架～"><a href="#推广一下自研小框架～" class="headerlink" title="推广一下自研小框架～"></a>推广一下自研小框架～</h3><h4 id="http-fetch-client-http请求框架"><a href="#http-fetch-client-http请求框架" class="headerlink" title="http-fetch-client http请求框架"></a><a href="https://github.com/huey-LS/http-fetch-client" target="_blank" rel="external">http-fetch-client</a> http请求框架</h4><p>为了支持微信小程序😄，现在已经支持注入请求模块了，意味着可以支持任意平台了～<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> HttpFetchClient, &#123; Response &#125; <span class="keyword">from</span> <span class="string">'http-fetch-client'</span>;</div><div class="line"><span class="keyword">const</span> fetchClient = <span class="keyword">new</span> HttpFetchClient(&#123;</div><div class="line">  adapter: <span class="function">(<span class="params">request</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">const</span> url = request.getURL();</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>((</div><div class="line">      resolve, reject</div><div class="line">    ) =&gt; &#123;</div><div class="line">      resolve(<span class="keyword">new</span> Response(&#123;</div><div class="line">        state: <span class="number">200</span> <span class="comment">// or 3xx,4xx, 500, xxx 等非0</span></div><div class="line">        readyState: <span class="number">4</span>,</div><div class="line">        headers: &#123;...&#125;,</div><div class="line">        body: &#123;...&#125;,</div><div class="line">        url: url</div><div class="line">      &#125;))</div><div class="line"></div><div class="line">      reject(<span class="keyword">new</span> Response(&#123;</div><div class="line">        state: <span class="number">0</span> <span class="comment">// 一般是超时或者 abort</span></div><div class="line">        readyState: <span class="number">4</span>,</div><div class="line">        headers: &#123;...&#125;,</div><div class="line">        body: &#123;...&#125;,</div><div class="line">        url: url</div><div class="line">      &#125;))</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">fetchClient.get(...)</div><div class="line">fetchClient.post(...)</div></pre></td></tr></table></figure></p>
+<h4 id="cherry-tomato-小番茄真好吃"><a href="#cherry-tomato-小番茄真好吃" class="headerlink" title="cherry-tomato 小番茄真好吃"></a><a href="https://github.com/huey-LS/cherry-tomato" target="_blank" rel="external">cherry-tomato</a> 小番茄真好吃</h4><p>这是做 js <code>Model</code> 的，配合 <code>typescript</code> 让你轻松了解完整功能</p>
 
       
     </div>
@@ -355,16 +364,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/lerna/" rel="tag"># lerna</a>
-          
-            <a href="/tags/submodule/" rel="tag"># submodule</a>
-          
-            <a href="/tags/前端工程化/" rel="tag"># 前端工程化</a>
-          
-        </div>
-      
 
       
       
@@ -374,8 +373,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/http-fetch-client/" rel="next" title="http-fetch-client介绍～">
-                <i class="fa fa-chevron-left"></i> http-fetch-client介绍～
+              <a href="/2019/06/project-demo/" rel="next" title="基于 git submodule + lerna 的多项目工程">
+                <i class="fa fa-chevron-left"></i> 基于 git submodule + lerna 的多项目工程
               </a>
             
           </div>
@@ -383,10 +382,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/project-demo/" rel="prev" title="基于 git submodule + lerna 的多项目工程">
-                基于 git submodule + lerna 的多项目工程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -526,7 +521,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二篇：使用-git-submodule-拆分仓库-书写中"><span class="nav-number">2.</span> <span class="nav-text">第二篇：使用 git submodule 拆分仓库(书写中)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文概要"><span class="nav-number">2.1.</span> <span class="nav-text">本文概要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#额外知识点"><span class="nav-number">2.1.1.</span> <span class="nav-text">额外知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-submodule"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">git submodule</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#demo"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">demo</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前言：为什么还要git-submodule"><span class="nav-number">2.2.</span> <span class="nav-text">前言：为什么还要git submodule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-git-submodule-lerna的建议目录结构"><span class="nav-number">2.3.</span> <span class="nav-text">使用 git submodule + lerna的建议目录结构</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#迟到的微信小程序开发小结"><span class="nav-number">1.</span> <span class="nav-text">迟到的微信小程序开发小结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#回顾一下…"><span class="nav-number">1.1.</span> <span class="nav-text">回顾一下…</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术框架"><span class="nav-number">1.2.</span> <span class="nav-text">技术框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#taro-typescript"><span class="nav-number">1.2.1.</span> <span class="nav-text">taro + typescript</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么使用-taro"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">为什么使用 taro</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么使用-typescript"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">为什么使用 typescript</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lerna"><span class="nav-number">1.2.2.</span> <span class="nav-text">lerna</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#中间遗留的问题及不完美的地方"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">中间遗留的问题及不完美的地方</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推广一下自研小框架～"><span class="nav-number">1.2.3.</span> <span class="nav-text">推广一下自研小框架～</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#http-fetch-client-http请求框架"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">http-fetch-client http请求框架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cherry-tomato-小番茄真好吃"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">cherry-tomato 小番茄真好吃</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

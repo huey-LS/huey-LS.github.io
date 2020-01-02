@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="目录 第一篇：基于 lerna 的多项目工程 第二篇：使用 git submodule 拆封仓库  第一篇：基于 lerna 的多项目工程本文额外知识点lernalerna github本文就不扩展了，有兴趣的同学可以看下 本文demodemo 前言：为什么要建立单工程多项目我们同时有 web + h5 + 后台的前端系统，3个项目分别部署，但是又有通用的部分。比如  登陆，3个系统是同样的登陆系">
+<meta name="description" content="目录 第一篇：基于 lerna 的多项目工程 第二篇：使用 git submodule 拆分仓库  第一篇：基于 lerna 的多项目工程本文概要本文主要是为了说明如何使用lerna在工程里管理多个依赖包及多个终端项目。并梳理一个基本的项目结构 额外知识点lernalerna github本文就不扩展了，有兴趣的同学可以看下 demohttps://github.com/ignous/projec">
 <meta name="keywords" content="lerna,submodule,前端工程化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于 git submodule + lerna 的多项目工程">
 <meta property="og:url" content="http://ignous.github.io/2019/06/project-demo/index.html">
 <meta property="og:site_name" content="lsxyz7的博客">
-<meta property="og:description" content="目录 第一篇：基于 lerna 的多项目工程 第二篇：使用 git submodule 拆封仓库  第一篇：基于 lerna 的多项目工程本文额外知识点lernalerna github本文就不扩展了，有兴趣的同学可以看下 本文demodemo 前言：为什么要建立单工程多项目我们同时有 web + h5 + 后台的前端系统，3个项目分别部署，但是又有通用的部分。比如  登陆，3个系统是同样的登陆系">
+<meta property="og:description" content="目录 第一篇：基于 lerna 的多项目工程 第二篇：使用 git submodule 拆分仓库  第一篇：基于 lerna 的多项目工程本文概要本文主要是为了说明如何使用lerna在工程里管理多个依赖包及多个终端项目。并梳理一个基本的项目结构 额外知识点lernalerna github本文就不扩展了，有兴趣的同学可以看下 demohttps://github.com/ignous/projec">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-17T03:37:54.266Z">
+<meta property="og:updated_time" content="2019-07-17T05:30:38.895Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于 git submodule + lerna 的多项目工程">
-<meta name="twitter:description" content="目录 第一篇：基于 lerna 的多项目工程 第二篇：使用 git submodule 拆封仓库  第一篇：基于 lerna 的多项目工程本文额外知识点lernalerna github本文就不扩展了，有兴趣的同学可以看下 本文demodemo 前言：为什么要建立单工程多项目我们同时有 web + h5 + 后台的前端系统，3个项目分别部署，但是又有通用的部分。比如  登陆，3个系统是同样的登陆系">
+<meta name="twitter:description" content="目录 第一篇：基于 lerna 的多项目工程 第二篇：使用 git submodule 拆分仓库  第一篇：基于 lerna 的多项目工程本文概要本文主要是为了说明如何使用lerna在工程里管理多个依赖包及多个终端项目。并梳理一个基本的项目结构 额外知识点lernalerna github本文就不扩展了，有兴趣的同学可以看下 demohttps://github.com/ignous/projec">
 
 
 
@@ -332,10 +332,11 @@
       
         <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
 <li><a href="http://www.lsxyz7.com/2019/06/project-demo/" target="_blank" rel="external">第一篇：基于 <code>lerna</code> 的多项目工程</a></li>
-<li><a href="http://www.lsxyz7.com/2019/07/project-demo-2/" target="_blank" rel="external">第二篇：使用 <code>git submodule</code> 拆封仓库</a></li>
+<li><a href="http://www.lsxyz7.com/2019/07/project-demo-2/" target="_blank" rel="external">第二篇：使用 <code>git submodule</code> 拆分仓库</a></li>
 </ul>
-<h1 id="第一篇：基于-lerna-的多项目工程"><a href="#第一篇：基于-lerna-的多项目工程" class="headerlink" title="第一篇：基于 lerna 的多项目工程"></a>第一篇：基于 <code>lerna</code> 的多项目工程</h1><h3 id="本文额外知识点"><a href="#本文额外知识点" class="headerlink" title="本文额外知识点"></a>本文额外知识点</h3><h4 id="lerna"><a href="#lerna" class="headerlink" title="lerna"></a><code>lerna</code></h4><p><a href="https://github.com/lerna/lerna" target="_blank" rel="external">lerna github</a><br>本文就不扩展了，有兴趣的同学可以看下</p>
-<h4 id="本文demo"><a href="#本文demo" class="headerlink" title="本文demo"></a>本文demo</h4><p><a href="https://github.com/ignous/project-demo" target="_blank" rel="external">demo</a></p>
+<h1 id="第一篇：基于-lerna-的多项目工程"><a href="#第一篇：基于-lerna-的多项目工程" class="headerlink" title="第一篇：基于 lerna 的多项目工程"></a>第一篇：基于 <code>lerna</code> 的多项目工程</h1><h2 id="本文概要"><a href="#本文概要" class="headerlink" title="本文概要"></a>本文概要</h2><p>本文主要是为了说明如何使用<code>lerna</code>在工程里管理多个依赖包及多个终端项目。并梳理一个基本的项目结构</p>
+<h3 id="额外知识点"><a href="#额外知识点" class="headerlink" title="额外知识点"></a>额外知识点</h3><h4 id="lerna"><a href="#lerna" class="headerlink" title="lerna"></a><code>lerna</code></h4><p><a href="https://github.com/lerna/lerna" target="_blank" rel="external">lerna github</a><br>本文就不扩展了，有兴趣的同学可以看下</p>
+<h4 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h4><p><a href="https://github.com/ignous/project-demo" target="_blank" rel="external">https://github.com/ignous/project-demo</a></p>
 <h2 id="前言：为什么要建立单工程多项目"><a href="#前言：为什么要建立单工程多项目" class="headerlink" title="前言：为什么要建立单工程多项目"></a>前言：为什么要建立单工程多项目</h2><p>我们同时有 <code>web + h5 + 后台</code>的前端系统，3个项目分别部署，但是又有通用的部分。比如</p>
 <ol>
 <li>登陆，3个系统是同样的登陆系统</li>
@@ -422,6 +423,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/12/wechat-mini-progrems/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -504,7 +509,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -560,7 +565,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一篇：基于-lerna-的多项目工程"><span class="nav-number">2.</span> <span class="nav-text">第一篇：基于 lerna 的多项目工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本文额外知识点"><span class="nav-number">2.0.1.</span> <span class="nav-text">本文额外知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#lerna"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">lerna</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本文demo"><span class="nav-number">2.0.1.2.</span> <span class="nav-text">本文demo</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前言：为什么要建立单工程多项目"><span class="nav-number">2.1.</span> <span class="nav-text">前言：为什么要建立单工程多项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于lerna的单工程多项目文件结构"><span class="nav-number">2.2.</span> <span class="nav-text">基于lerna的单工程多项目文件结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lerna配置"><span class="nav-number">2.2.1.</span> <span class="nav-text">lerna配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根目录下package-json的配置"><span class="nav-number">2.2.2.</span> <span class="nav-text">根目录下package.json的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#packages中公共模块的配置"><span class="nav-number">2.2.3.</span> <span class="nav-text">packages中公共模块的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#公共项目的package-json"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">公共项目的package.json</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何在clients项目中使用公共模块-以web为例"><span class="nav-number">2.2.4.</span> <span class="nav-text">如何在clients项目中使用公共模块(以web为例)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#webpack-config-js配置"><span class="nav-number">2.2.4.1.</span> <span class="nav-text">webpack.config.js配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置完成"><span class="nav-number">2.3.</span> <span class="nav-text">配置完成</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一篇：基于-lerna-的多项目工程"><span class="nav-number">2.</span> <span class="nav-text">第一篇：基于 lerna 的多项目工程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文概要"><span class="nav-number">2.1.</span> <span class="nav-text">本文概要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#额外知识点"><span class="nav-number">2.1.1.</span> <span class="nav-text">额外知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#lerna"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">lerna</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#demo"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">demo</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前言：为什么要建立单工程多项目"><span class="nav-number">2.2.</span> <span class="nav-text">前言：为什么要建立单工程多项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于lerna的单工程多项目文件结构"><span class="nav-number">2.3.</span> <span class="nav-text">基于lerna的单工程多项目文件结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lerna配置"><span class="nav-number">2.3.1.</span> <span class="nav-text">lerna配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根目录下package-json的配置"><span class="nav-number">2.3.2.</span> <span class="nav-text">根目录下package.json的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#packages中公共模块的配置"><span class="nav-number">2.3.3.</span> <span class="nav-text">packages中公共模块的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#公共项目的package-json"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">公共项目的package.json</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何在clients项目中使用公共模块-以web为例"><span class="nav-number">2.3.4.</span> <span class="nav-text">如何在clients项目中使用公共模块(以web为例)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#webpack-config-js配置"><span class="nav-number">2.3.4.1.</span> <span class="nav-text">webpack.config.js配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置完成"><span class="nav-number">2.4.</span> <span class="nav-text">配置完成</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -580,7 +585,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
