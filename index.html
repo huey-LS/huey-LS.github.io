@@ -247,6 +247,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://huey-ls.github.io/2020/01/chrome-autoplay-policy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="huey-LS">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lsxyz7的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/chrome-autoplay-policy/" itemprop="url">Chrome 66版本视频/音频自动播放策略介绍</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-22T00:00:00+08:00">
+                2020-01-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Chrome-66版本视频-音频自动播放策略介绍"><a href="#Chrome-66版本视频-音频自动播放策略介绍" class="headerlink" title="Chrome 66版本视频/音频自动播放策略介绍"></a>Chrome 66版本视频/音频自动播放策略介绍</h1><p>先附上chrome大佬的说明： <a href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes" target="_blank" rel="external">https://developers.google.com/web/updates/2017/09/autoplay-policy-changes</a></p>
+<h2 id="新策略介绍"><a href="#新策略介绍" class="headerlink" title="新策略介绍"></a>新策略介绍</h2><blockquote>
+<p>Chrome’s autoplay policies are simple:</p>
+<ul>
+<li>Muted autoplay is always allowed.</li>
+<li>Autoplay with sound is allowed if:<ul>
+<li>User has interacted with the domain (click, tap, etc.).</li>
+<li>On desktop, the user’s Media Engagement Index threshold has been crossed, meaning the user has previously played video with sound.</li>
+<li>The user has added the site to their home screen on mobile or installed the PWA on desktop.</li>
+</ul>
+</li>
+<li>Top frames can delegate autoplay permission to their iframes to allow autoplay with sound.</li>
+</ul>
+</blockquote>
+<p>简单翻一下是这个意思</p>
+<ul>
+<li>静音的视频/音频可以自动播放</li>
+<li>以下情况的自动播放会被允许<ul>
+<li>用户有点击等操作</li>
+<li>PC：MEI（后面会介绍）够高</li>
+<li>移动端：你的站点被用户添加到首页，或者安装了pwa</li>
+<li>使用iframe时，如果外层有自动播放权限，并给iframe添加了 <code>allow=&quot;autoplay&quot;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="处理方案"><a href="#处理方案" class="headerlink" title="处理方案"></a>处理方案</h3><p>我们你能控制一般是这2条</p>
+<ol>
+<li>用户有点击等操作</li>
+<li>静音的视频/音频可以自动播放</li>
+</ol>
+<h3 id="关于用户有点击等操作"><a href="#关于用户有点击等操作" class="headerlink" title="关于用户有点击等操作"></a>关于用户有点击等操作</h3><p>可以考虑等是你的业务场景，比如你是点击按钮后弹窗播放，或者一个spa，一般不会遇到被静止的情况</p>
+<h3 id="静音的视频-音频可以自动播放"><a href="#静音的视频-音频可以自动播放" class="headerlink" title="静音的视频/音频可以自动播放"></a>静音的视频/音频可以自动播放</h3><p>这个一般针对页面一打开就需要自动播放一个视频的.</p>
+<p>我们可以考虑如下代码进行兼容：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> video = <span class="built_in">document</span>.getElementById(<span class="string">'video'</span>);</div><div class="line"></div><div class="line">video.play()</div><div class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="comment">// 播放成功啦</span></div><div class="line">  &#125;, () =&gt; &#123;</div><div class="line">    <span class="comment">//播放失败</span></div><div class="line">    video.muted = <span class="literal">true</span>; <span class="comment">// 设置为静音然后再次播发</span></div><div class="line">    video.play();</div><div class="line">  &#125;)</div></pre></td></tr></table></figure></p>
+<p>虽然被静音了，但是能保证视频还是正常被播放的</p>
+<h2 id="Media-Engagement-Index-MEI"><a href="#Media-Engagement-Index-MEI" class="headerlink" title="Media Engagement Index (MEI)"></a>Media Engagement Index (MEI)</h2><p>简单来说，这是chrome根据当前用户行为，对你网站视频对一个评分，评分越高，他就会允许你自动播放视频</p>
+<p>提高评分有4个标准：</p>
+<ol>
+<li><code>Consumption of the media (audio/video) must be greater than 7 seconds.</code><br>用户看视频/音频超过7秒</li>
+<li><code>Audio must be present and unmuted.</code> 这段时间有音频且不是静音的。</li>
+<li><code>Tab with video is active.</code> 页面的标签是激活状态，就是用户正在浏览你的页面</li>
+<li><code>Size of the video (in px) must be greater than 200x140.</code> 视频得够大，需要超过<code>200x140</code></li>
+</ol>
+<p>这4个标准看上去就是chrome在评估，用户是不是真的在使用你的网页来看视频，只要用户持续使用，相信你的自动播放也不太会被限制。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://huey-ls.github.io/2019/12/2019-summary/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1412,7 +1574,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1425,7 +1587,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
