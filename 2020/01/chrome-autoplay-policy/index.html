@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="huey-ls的博客">
 <meta property="og:description" content="前言最近在做直播相关业务开发，chrome大佬将在 2020年底不支持flash啦，那现在html5的播放器开始成为了主流，各大平台也有了自己的html5播放器～ 觉得我们肯定也得赶紧抱上这个变化，就开始了html5视频播放开发之旅。 愉快的开发之旅中，总是能遇到一个神奇的问题： chrome 里尝试播放偶现了个报错1Uncaught (in promise) DOMException: play">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-22T06:09:39.389Z">
+<meta property="og:updated_time" content="2020-01-22T06:10:14.544Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chrome 66版本视频&#x2F;音频自动播放策略介绍">
 <meta name="twitter:description" content="前言最近在做直播相关业务开发，chrome大佬将在 2020年底不支持flash啦，那现在html5的播放器开始成为了主流，各大平台也有了自己的html5播放器～ 觉得我们肯定也得赶紧抱上这个变化，就开始了html5视频播放开发之旅。 愉快的开发之旅中，总是能遇到一个神奇的问题： chrome 里尝试播放偶现了个报错1Uncaught (in promise) DOMException: play">
@@ -333,7 +333,7 @@
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近在做直播相关业务开发，chrome大佬将在 2020年底不支持flash啦，那现在html5的播放器开始成为了主流，各大平台也有了自己的html5播放器～ 觉得我们肯定也得赶紧抱上这个变化，就开始了html5视频播放开发之旅。</p>
 <p>愉快的开发之旅中，总是能遇到一个神奇的问题： chrome 里尝试播放偶现了个报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Uncaught (in promise) DOMException: play() failed because the user didn&apos;t interact with the document first. https://goo.gl/xX8pDD</div></pre></td></tr></table></figure></p>
 <p>一开始以为是<code>video.play</code> 调用过早，于是放到到了 <code>canplay</code> 事件后执行。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">video.addEventListener(<span class="string">'canplay'</span>, () =&gt; &#123;</div><div class="line">  video.play();</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>但是测试到时候发现依旧不是完美解决，难道又有什么新坑么？<br>仔细一看，chrome很贴心呀，已经放了一个链接<code>https://goo.gl/xX8pDD</code>于是赶紧打开看下。<br>发现这是 最新chrome增加了对视频自动播放控制的策略。</p>
+<p>但是测试到时候发现依旧不能解决，难道又有什么新坑么？<br>仔细一看，chrome很贴心呀，已经放了一个链接<code>https://goo.gl/xX8pDD</code>于是赶紧打开看下。<br>发现这是 最新chrome增加了对视频自动播放控制的策略。</p>
 <h1 id="Chrome-66版本视频-音频自动播放策略介绍"><a href="#Chrome-66版本视频-音频自动播放策略介绍" class="headerlink" title="Chrome 66版本视频/音频自动播放策略介绍"></a>Chrome 66版本视频/音频自动播放策略介绍</h1><p>先附上chrome大佬的说明： <a href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes" target="_blank" rel="external">https://developers.google.com/web/updates/2017/09/autoplay-policy-changes</a></p>
 <h2 id="新策略介绍"><a href="#新策略介绍" class="headerlink" title="新策略介绍"></a>新策略介绍</h2><blockquote>
 <p>Chrome’s autoplay policies are simple:</p>
