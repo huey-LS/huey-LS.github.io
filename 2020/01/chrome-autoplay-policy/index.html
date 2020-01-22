@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="huey-ls的博客">
 <meta property="og:description" content="前言最近在做直播相关业务开发，chrome大佬将在 2020年底不支持flash啦，那现在html5的播放器开始成为了主流，各大平台也有了自己的html5播放器～ 觉得我们肯定也得赶紧抱上这个变化，就开始了html5视频播放开发之旅。 愉快的开发之旅中，总是能遇到一个神奇的问题： chrome 里尝试播放偶现了个报错1Uncaught (in promise) DOMException: play">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-22T06:13:02.377Z">
+<meta property="og:updated_time" content="2020-01-22T06:13:54.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chrome 66版本视频&#x2F;音频自动播放策略介绍">
 <meta name="twitter:description" content="前言最近在做直播相关业务开发，chrome大佬将在 2020年底不支持flash啦，那现在html5的播放器开始成为了主流，各大平台也有了自己的html5播放器～ 觉得我们肯定也得赶紧抱上这个变化，就开始了html5视频播放开发之旅。 愉快的开发之旅中，总是能遇到一个神奇的问题： chrome 里尝试播放偶现了个报错1Uncaught (in promise) DOMException: play">
@@ -385,7 +385,7 @@
 <li><code>Size of the video (in px) must be greater than 200x140.</code> 视频尺寸得够大，需要超过<code>200x140</code></li>
 </ol>
 <p>这4个标准看上去就是chrome在评估，用户是不是真的在使用你的网页来看视频，只要用户持续使用，相信你的自动播放也不太会被限制。</p>
-<p>PS: 清理缓存会清空评分的.</p>
+<p>PS: 用户如果手动清理缓存会清空这个评分的，不过用户这个操作一般不会太频繁吧..</p>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>chrome的策略我们只能竟然去兼容.. 毕竟浏览器对于前端来说是爸爸级别的压制。</p>
 <p>先用兼容方案让用户使用起来～ 慢慢的，如果用户真的一直使用你的网站，MEI的评分更高，也就太会被限制啦</p>
 <p>最后推一下自己的 video播放器 <a href="https://github.com/huey-LS/popcorn-video" target="_blank" rel="external">popcorn-video</a>正在不断的迭代开发，欢迎提建议和bug</p>
