@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="huey-ls的博客">
 <meta property="og:description" content="Chrome 66版本视频/音频自动播放策略介绍先附上chrome大佬的说明： https://developers.google.com/web/updates/2017/09/autoplay-policy-changes 新策略介绍 Chrome’s autoplay policies are simple:  Muted autoplay is always allowed. Autopl">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-22T03:27:42.059Z">
+<meta property="og:updated_time" content="2020-01-22T03:39:36.970Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chrome 66版本视频&#x2F;音频自动播放策略介绍">
 <meta name="twitter:description" content="Chrome 66版本视频/音频自动播放策略介绍先附上chrome大佬的说明： https://developers.google.com/web/updates/2017/09/autoplay-policy-changes 新策略介绍 Chrome’s autoplay policies are simple:  Muted autoplay is always allowed. Autopl">
@@ -351,16 +351,22 @@
 <li>用户有点击等操作</li>
 <li>PC：MEI（后面会介绍）够高</li>
 <li>移动端：你的站点被用户添加到首页，或者安装了pwa</li>
-<li>使用iframe时，如果外层有自动播放权限，并给iframe添加了 <code>allow=&quot;autoplay&quot;</code></li>
 </ul>
 </li>
+<li>使用iframe时，如果外层有自动播放权限，并给iframe添加了 <code>allow=&quot;autoplay&quot;</code></li>
 </ul>
-<h3 id="处理方案"><a href="#处理方案" class="headerlink" title="处理方案"></a>处理方案</h3><p>我们你能控制一般是这2条</p>
+<h3 id="处理方案"><a href="#处理方案" class="headerlink" title="处理方案"></a>处理方案</h3><p>我们能直接控制一般是这2条</p>
 <ol>
 <li>用户有点击等操作</li>
 <li>静音的视频/音频可以自动播放</li>
 </ol>
-<h3 id="关于用户有点击等操作"><a href="#关于用户有点击等操作" class="headerlink" title="关于用户有点击等操作"></a>关于用户有点击等操作</h3><p>可以考虑等是你的业务场景，比如你是点击按钮后弹窗播放，或者一个spa，一般不会遇到被静止的情况</p>
+<h3 id="关于用户有点击等操作"><a href="#关于用户有点击等操作" class="headerlink" title="关于用户有点击等操作"></a>关于用户有点击等操作</h3><p>可以修改你的交互场景，比如：</p>
+<ul>
+<li>可以在视频播放上放一个大的播放按钮，点击再开始播放</li>
+<li>点击按钮后弹窗里打开视频再播放</li>
+<li>spa应用，跳转也是当前页面的，可以让用户无感知的体验自动播放</li>
+</ul>
+<p>但是呢，以上这些都有一些局限性，离真正的自动播放还有一点差别的</p>
 <h3 id="静音的视频-音频可以自动播放"><a href="#静音的视频-音频可以自动播放" class="headerlink" title="静音的视频/音频可以自动播放"></a>静音的视频/音频可以自动播放</h3><p>这个一般针对页面一打开就需要自动播放一个视频的.</p>
 <p>我们可以考虑如下代码进行兼容：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> video = <span class="built_in">document</span>.getElementById(<span class="string">'video'</span>);</div><div class="line"></div><div class="line">video.play()</div><div class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="comment">// 播放成功啦</span></div><div class="line">  &#125;, () =&gt; &#123;</div><div class="line">    <span class="comment">//播放失败</span></div><div class="line">    video.muted = <span class="literal">true</span>; <span class="comment">// 设置为静音然后再次播发</span></div><div class="line">    video.play();</div><div class="line">  &#125;)</div></pre></td></tr></table></figure></p>
 <p>虽然被静音了，但是能保证视频还是正常被播放的</p>
