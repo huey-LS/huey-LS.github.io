@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Chrome 66版本视频/音频自动播放策略介绍先附上chrome大佬的说明： https://developers.google.com/web/updates/2017/09/autoplay-policy-changes 新策略介绍 Chrome’s autoplay policies are simple:  Muted autoplay is always allowed. Autopl">
+<meta name="description" content="前言最近在做直播相关业务，chrome大佬将在 2020年底不支持flash啦，那现在html5的播放器开始成为了主流，各大平台也有了自己的html5播放器～ 我们也得赶紧抱上这个变化哈. 然而遇到了一个小问题.. chrome 里尝试播放偶现了个报错 1Uncaught (in promise) DOMException: The play() request was interrupted b">
 <meta name="keywords" content="视频,音频,chrome">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Chrome 66版本视频&#x2F;音频自动播放策略介绍">
 <meta property="og:url" content="https://huey-ls.github.io/2020/01/chrome-autoplay-policy/index.html">
 <meta property="og:site_name" content="huey-ls的博客">
-<meta property="og:description" content="Chrome 66版本视频/音频自动播放策略介绍先附上chrome大佬的说明： https://developers.google.com/web/updates/2017/09/autoplay-policy-changes 新策略介绍 Chrome’s autoplay policies are simple:  Muted autoplay is always allowed. Autopl">
+<meta property="og:description" content="前言最近在做直播相关业务，chrome大佬将在 2020年底不支持flash啦，那现在html5的播放器开始成为了主流，各大平台也有了自己的html5播放器～ 我们也得赶紧抱上这个变化哈. 然而遇到了一个小问题.. chrome 里尝试播放偶现了个报错 1Uncaught (in promise) DOMException: The play() request was interrupted b">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-22T03:44:29.169Z">
+<meta property="og:updated_time" content="2020-01-22T05:52:31.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chrome 66版本视频&#x2F;音频自动播放策略介绍">
-<meta name="twitter:description" content="Chrome 66版本视频/音频自动播放策略介绍先附上chrome大佬的说明： https://developers.google.com/web/updates/2017/09/autoplay-policy-changes 新策略介绍 Chrome’s autoplay policies are simple:  Muted autoplay is always allowed. Autopl">
+<meta name="twitter:description" content="前言最近在做直播相关业务，chrome大佬将在 2020年底不支持flash啦，那现在html5的播放器开始成为了主流，各大平台也有了自己的html5播放器～ 我们也得赶紧抱上这个变化哈. 然而遇到了一个小问题.. chrome 里尝试播放偶现了个报错 1Uncaught (in promise) DOMException: The play() request was interrupted b">
 
 
 
@@ -330,7 +330,13 @@
       
 
       
-        <h1 id="Chrome-66版本视频-音频自动播放策略介绍"><a href="#Chrome-66版本视频-音频自动播放策略介绍" class="headerlink" title="Chrome 66版本视频/音频自动播放策略介绍"></a>Chrome 66版本视频/音频自动播放策略介绍</h1><p>先附上chrome大佬的说明： <a href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes" target="_blank" rel="external">https://developers.google.com/web/updates/2017/09/autoplay-policy-changes</a></p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近在做直播相关业务，chrome大佬将在 2020年底不支持flash啦，那现在html5的播放器开始成为了主流，<br>各大平台也有了自己的html5播放器～ 我们也得赶紧抱上这个变化哈.</p>
+<p>然而遇到了一个小问题.. chrome 里尝试播放偶现了个报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Uncaught (in promise) DOMException: The play() request was interrupted by a call to pause().</div></pre></td></tr></table></figure>
+<p>一开始以为是<code>video.play</code> 调用过早，于是放到到了 <code>canplay</code> 事件后执行。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">video.addEventListener(<span class="string">'canplay'</span>, () =&gt; &#123;</div><div class="line">  video.play();</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>但是测试到时候发现依旧不是完美解决，难道又又什么新到坑么？</p>
+<p>经过慢慢的排查，才发现这是 最新chrome增加了对视频自动播放控制的策略。</p>
+<h1 id="Chrome-66版本视频-音频自动播放策略介绍"><a href="#Chrome-66版本视频-音频自动播放策略介绍" class="headerlink" title="Chrome 66版本视频/音频自动播放策略介绍"></a>Chrome 66版本视频/音频自动播放策略介绍</h1><p>先附上chrome大佬的说明： <a href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes" target="_blank" rel="external">https://developers.google.com/web/updates/2017/09/autoplay-policy-changes</a></p>
 <h2 id="新策略介绍"><a href="#新策略介绍" class="headerlink" title="新策略介绍"></a>新策略介绍</h2><blockquote>
 <p>Chrome’s autoplay policies are simple:</p>
 <ul>
@@ -381,6 +387,8 @@
 <p>这4个标准看上去就是chrome在评估，用户是不是真的在使用你的网页来看视频，只要用户持续使用，相信你的自动播放也不太会被限制。</p>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>chrome的策略我们只能竟然去兼容.. 毕竟浏览器对于前端来说是爸爸级别的压制。</p>
 <p>先用兼容方案让用户使用起来～ 慢慢的，如果用户真的一直使用你的网站，MEI的评分更高，也就太会被限制啦</p>
+<p>最后推一下自己的 video播放器 <a href="https://github.com/huey-LS/popcorn-video" target="_blank" rel="external">popcorn-video</a>正在不断的迭代开发，有建议和ub</p>
+<p>现在已经有了<code>react</code>组件，在<code>react</code>框架下，相信会比<code>video.js</code>有更好的使用体验～</p>
 
       
     </div>
@@ -563,7 +571,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chrome-66版本视频-音频自动播放策略介绍"><span class="nav-number">1.</span> <span class="nav-text">Chrome 66版本视频/音频自动播放策略介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#新策略介绍"><span class="nav-number">1.1.</span> <span class="nav-text">新策略介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#处理方案"><span class="nav-number">1.1.1.</span> <span class="nav-text">处理方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关于用户有点击等操作"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">关于用户有点击等操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#静音的视频-音频可以自动播放"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">静音的视频/音频可以自动播放</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Media-Engagement-Index-MEI"><span class="nav-number">1.2.</span> <span class="nav-text">Media Engagement Index (MEI)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.3.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chrome-66版本视频-音频自动播放策略介绍"><span class="nav-number">2.</span> <span class="nav-text">Chrome 66版本视频/音频自动播放策略介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#新策略介绍"><span class="nav-number">2.1.</span> <span class="nav-text">新策略介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#处理方案"><span class="nav-number">2.1.1.</span> <span class="nav-text">处理方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关于用户有点击等操作"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">关于用户有点击等操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#静音的视频-音频可以自动播放"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">静音的视频/音频可以自动播放</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Media-Engagement-Index-MEI"><span class="nav-number">2.2.</span> <span class="nav-text">Media Engagement Index (MEI)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">2.3.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
             
 
           </div>
