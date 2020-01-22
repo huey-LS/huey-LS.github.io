@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="huey-ls的博客">
 <meta property="og:description" content="前言最近在做直播相关业务开发，chrome大佬将在 2020年底不支持flash啦，那现在html5的播放器开始成为了主流，各大平台也有了自己的html5播放器～ 觉得我们肯定也得赶紧抱上这个变化，就开始了html5视频播放开发之旅。 愉快的开发之旅中，总是能遇到一个神奇的问题： chrome 里尝试播放偶现了个报错1Uncaught (in promise) DOMException: play">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-22T06:10:14.544Z">
+<meta property="og:updated_time" content="2020-01-22T06:12:12.226Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chrome 66版本视频&#x2F;音频自动播放策略介绍">
 <meta name="twitter:description" content="前言最近在做直播相关业务开发，chrome大佬将在 2020年底不支持flash啦，那现在html5的播放器开始成为了主流，各大平台也有了自己的html5播放器～ 觉得我们肯定也得赶紧抱上这个变化，就开始了html5视频播放开发之旅。 愉快的开发之旅中，总是能遇到一个神奇的问题： chrome 里尝试播放偶现了个报错1Uncaught (in promise) DOMException: play">
@@ -375,7 +375,7 @@
 <p>我们可以考虑如下代码进行兼容：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> video = <span class="built_in">document</span>.getElementById(<span class="string">'video'</span>);</div><div class="line"></div><div class="line">video.play()</div><div class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="comment">// 播放成功啦</span></div><div class="line">  &#125;, () =&gt; &#123;</div><div class="line">    <span class="comment">//播放失败</span></div><div class="line">    video.muted = <span class="literal">true</span>; <span class="comment">// 设置为静音然后再次播发</span></div><div class="line">    video.play();</div><div class="line">  &#125;)</div></pre></td></tr></table></figure></p>
 <p>虽然被静音了，但是能保证视频还是正常被播放的。</p>
 <p>2种方案虽然都不是特别完美，但这也chrome希望我们做的处理。<br>大家可以按照自己的需求，选择上面2种处理方案中的一种～</p>
-<h2 id="Media-Engagement-Index-MEI"><a href="#Media-Engagement-Index-MEI" class="headerlink" title="Media Engagement Index (MEI)"></a>Media Engagement Index (MEI)</h2><p>简单来说，这是chrome根据当前用户行为，对你网站视频对一个评分，评分越高，他就会允许你自动播放视频</p>
+<h2 id="Media-Engagement-Index-MEI"><a href="#Media-Engagement-Index-MEI" class="headerlink" title="Media Engagement Index (MEI)"></a>Media Engagement Index (MEI)</h2><p>简单来说，这是chrome根据当前用户行为，对你网站视频的一个评分，评分越高，他就会允许你自动播放视频</p>
 <p>可以通过一下子地址，查看你chrome里的信息～<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chrome://media-engagement/</div></pre></td></tr></table></figure></p>
 <p>我们继续关注下提高评分的方法，提高评分有4个标准：</p>
 <ol>
